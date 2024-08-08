@@ -30,6 +30,10 @@ User.init(
       },
       // Reminder- add any new columns you'd like to the User model here
     },
+    projects_link: {
+      type: DataTypes.STRING,
+      allowNull: false
+    }
   },
   {
     hooks: {
