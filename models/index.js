@@ -1,16 +1,34 @@
 // import all models here
 const User = require("./User");
-const ExampleData = require("./ExampleData");
+const Post = require("./Post");
+const Tag = require('./Tag');
+const PostTag = require('./PostTag')
 
 // Reminder- create any additional associations here
-ExampleData.belongsTo(User, {
+Post.belongsTo(User, {
   foreignKey: "userId",
   onDelete: "CASCADE",
 });
 
-User.hasMany(ExampleData, {
+User.hasMany(Post, {
   foreignKey: "userId",
 });
 
+// Products belongToMany Tags (through ProductTag)
+Post.belongsToMany(Tag, {
+  through: {
+    model: PostTag,
+    unique: false
+    
+  }
+});
+// Tags belongToMany Products (through ProductTag)
+Tag.belongsToMany(Post, {
+  through: {
+    model: PostTag,
+    unique: false
+  }
+});
+
 // export all models here
-module.exports = { User, ExampleData };
+module.exports = { User, Post, Tag, PostTag };
