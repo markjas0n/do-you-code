@@ -4,9 +4,9 @@ const { Model, DataTypes } = require("sequelize");
 // Local Modules
 const sequelize = require("../config/connection");
 
-class ExampleData extends Model {}
+class Post extends Model { }
 
-ExampleData.init(
+Post.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -14,9 +14,21 @@ ExampleData.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    message: {
+    title: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    descritpion: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    screenshot: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    project_link: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -25,15 +37,15 @@ ExampleData.init(
         key: "id",
       },
     },
-    // Reminder- Add any new columns to the ExampleData model here
+
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "data one",
+    modelName: "post",
   }
 );
 
-module.exports = ExampleData;
+module.exports = Post;
