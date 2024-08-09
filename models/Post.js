@@ -18,7 +18,7 @@ Post.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    descritpion: {
+    description: {
       type: DataTypes.STRING,
       allowNull: false,
     },

@@ -1,17 +1,25 @@
-<div class="row">
-  {{#each examples}}
-  <div class="col-md-4 mb-4">
-    {{>item}}
-  </div>
+<div>
+  {{!-- Reminder: examples comes from the data being passed in the res.render on homeRoutes.js! --}}
+
+  {{#each posts as |post|}}
+  {{!-- Reminder- this is a partial! Handlebars will render the code located in items.handlebars in the /partials/
+  directory! --}}
+  {{>items}}
   {{/each}}
 </div>
 
-<div class="mt-5">
-  <h2 class="text-primary-emphasis">Create New Message</h2>
+<div>
+  <div>
+    <h2 class="text-primary-emphasis">Create New Post</h2>
+  </div>
   <form id="new-data-form" class="mb-4">
     <div class="mb-3">
-      <label for="data-message" class="form-label text-light-emphasis">Message</label>
-      <textarea class="form-control" name="data-message" id="data-message" rows="3"></textarea>
+      <label for="data-title" class="form-label text-light-emphasis">Title</label>
+      <textarea name="data-title"></textarea>
+      <label for="data-description" class="form-label text-light-emphasis">Description</label>
+      <textarea name="data-description"></textarea>
+      <label for="data-link" class="form-label text-light-emphasis">Project Link</label>
+      <textarea name="data-link"></textarea>
     </div>
     <button type="submit" class="btn btn-primary">Create</button>
   </form>

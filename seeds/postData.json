@@ -1,0 +1,100 @@
+[
+    {
+        "title": "Advanced Node.js Techniques",
+        "description": "Exploring advanced techniques and best practices for Node.js development.",
+        "screenshot": "random_string.png",
+        "project_link": "https://github.com/yennefer/advanced-nodejs-techniques",
+        "user_id": 1
+    },
+    {
+        "title": "Mastering ES6 Features",
+        "description": "A comprehensive guide to mastering the new features introduced in ES6.",
+        "screenshot": "random_string.png",
+        "project_link": "https://github.com/geralt/mastering-es6-features",
+        "user_id": 2
+    },
+    {
+        "title": "Principles of Object-Oriented Programming",
+        "description": "Understanding and applying the core principles of object-oriented programming.",
+        "screenshot": "random_string.png",
+        "project_link": "https://github.com/ciri/oop-principles",
+        "user_id": 3
+    },
+    {
+        "title": "Building REST APIs with Express",
+        "description": "Creating and managing RESTful APIs using Express.js.",
+        "screenshot": "random_string.png",
+        "project_link": "https://github.com/triss/express-rest-apis",
+        "user_id": 4
+    },
+    {
+        "title": "SQL Query Optimization Techniques",
+        "description": "Techniques for optimizing SQL queries and improving database performance.",
+        "screenshot": "random_string.png",
+        "project_link": "https://github.com/dandelion/sql-query-optimization",
+        "user_id": 5
+    },
+    {
+        "title": "Implementing the MVC Paradigm",
+        "description": "Applying the Model-View-Controller paradigm in modern web applications.",
+        "screenshot": "random_string.png",
+        "project_link": "https://github.com/zoltan/mvc-paradigm",
+        "user_id": 6
+    },
+    {
+        "title": "Using Sequelize with Node.js",
+        "description": "A guide to integrating Sequelize ORM with Node.js applications.",
+        "screenshot": "random_string.png",
+        "project_link": "https://github.com/vesemir/sequelize-nodejs",
+        "user_id": 7
+    },
+    {
+        "title": "Testing Strategies for JavaScript Applications",
+        "description": "Best practices and tools for testing JavaScript applications effectively.",
+        "screenshot": "random_string.png",
+        "project_link": "https://github.com/eskell/javascript-testing-strategies",
+        "user_id": 8
+    },
+    {
+        "title": "Agile Development Methodologies",
+        "description": "Exploring various Agile development methodologies and their applications.",
+        "screenshot": "random_string.png",
+        "project_link": "https://github.com/regis/agile-development-methodologies",
+        "user_id": 9
+    },
+    {
+        "title": "Effective Team Collaboration Techniques",
+        "description": "Strategies and tools for enhancing team collaboration in software development projects.",
+        "screenshot": "random_string.png",
+        "project_link": "https://github.com/milva/team-collaboration-techniques",
+        "user_id": 10
+    },
+    {
+        "title": "Agile Development Best Practices",
+        "description": "Best practices for implementing Agile development effectively within teams.",
+        "screenshot": "random_string.png",
+        "project_link": "https://github.com/angouleme/agile-development-best-practices",
+        "user_id": 11
+    },
+    {
+        "title": "Node.js Performance Optimization",
+        "description": "Techniques for optimizing the performance of Node.js applications.",
+        "screenshot": "random_string.png",
+        "project_link": "https://github.com/coen/nodejs-performance-optimization",
+        "user_id": 12
+    },
+    {
+        "title": "Understanding ES6 Modules",
+        "description": "An introduction to ES6 modules and how to use them in your projects.",
+        "screenshot": "random_string.png",
+        "project_link": "https://github.com/keira/es6-modules",
+        "user_id": 13
+    },
+    {
+        "title": "Object-Oriented Design Patterns",
+        "description": "Exploring common design patterns used in object-oriented programming.",
+        "screenshot": "random_string.png",
+        "project_link": "https://github.com/shani/oop-design-patterns",
+        "user_id": 14
+    }
+]
