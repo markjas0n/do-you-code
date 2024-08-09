@@ -1,21 +1,23 @@
-/* any css stylesheets can go in this folder */
-/* hint- remember to import them in your handlebars! */
+/* any css stylesheets can go in this folder
+hint- remember to import them in your handlebars! */
 #header {
   background-color: lightblue;
 }
+
 #footer {
   background-color: lightcoral;
 }
+
 #nav {
   display: flex;
 }
 
-#nav > ul {
+#nav>ul {
   display: flex;
   list-style-type: none;
   align-items: center;
 }
 
-#nav > ul > li {
+#nav>ul>li {
   margin: 0 10px;
 }
