@@ -1,12 +1,10 @@
 {{!-- Reminder- this is a partial! Handlebars will render this code for as many '{{#each examples}}' that exist! --}}
 {{!-- Partials are invoked in /views/ by using the syntax: {{> partial-file-name}} --}}
 
-<div>
-  <h2>
-    {{message}}
-  </h2>
-  <div>
-    Posted by
-    {{user.username}}
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{title}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{project_link}}</h6>
+    <p class="card-text">{{description}}</p>
   </div>
 </div>
