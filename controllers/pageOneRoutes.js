@@ -1,15 +1,16 @@
 const router = require("express").Router();
 
 // import any models you plan to use for this page's routes here
-const { ExampleData } = require("../models");
+const { Post, Tag, PostTag } = require("../models");
 
 // protects routes from unauthorized access
 const { withGuard } = require("../utils/authGuard");
 
 router.get("/", withGuard, async (req, res) => {
   try {
-    const databyUser = await ExampleData.findAll({
+    const databyUser = await Post.findAll({
       // Reminder- this is how you filter data by user_id
+      include: [{ model: Tag, through: PostTag}],
       where: {
         user_id: req.session.user_id,
       },
