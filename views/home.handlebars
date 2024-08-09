@@ -1,7 +1,7 @@
 <div>
   {{!-- Reminder: examples comes from the data being passed in the res.render on homeRoutes.js! --}}
 
-  {{#each posts}}
+  {{#each posts as |post|}}
   {{!-- Reminder- this is a partial! Handlebars will render the code located in items.handlebars in the /partials/
   directory! --}}
   {{>items}}
@@ -13,8 +13,12 @@
     <h2>Create New Post</h2>
   </div>
   <form id="new-data-form">
-    <label for="data-message">Message</label>
-    <textarea name="data-message"></textarea>
+    <label for="data-title">Title</label>
+    <textarea name="data-title"></textarea>
+    <label for="data-description">Description</label>
+    <textarea name="data-description"></textarea>
+    <label for="data-link">Project Link</label>
+    <textarea name="data-link"></textarea>
 
     <button type="submit">Create</button>
   </form>
