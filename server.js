@@ -23,7 +23,8 @@ const hbs = exphbs.create();
 
 // Sets up session and connect to our Sequelize db
 const sess = {
-  secret: process.env.SESSION_SECRET || 'your_default_secret_key',
+  secret: process.env.SECRET,
+  //ignore this now
   // Express session will use cookies by default, but you can specify options for those cookies by adding a 'cookies' property to your session options
   cookie: {
     // Sets the maximum age for the cookie to be valid. Here, the cookie (and session) will expire after one day. The time should be given in milliseconds.
