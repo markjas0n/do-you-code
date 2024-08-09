@@ -1,44 +1,44 @@
 [
     {
-        "name": "yennefer"
+        "name": "Node.js Techniques"
     },
     {
-        "name": "geralt"
+        "name": "ES6 Features"
     },
     {
-        "name": "ciri"
+        "name": "OOP Principles"
     },
     {
-        "name": "triss"
+        "name": "REST APIs"
     },
     {
-        "name": "dandelion"
+        "name": "SQL Optimization"
     },
     {
-        "name": "zoltan"
+        "name": "MVC Paradigm"
     },
     {
-        "name": "vesemir"
+        "name": "Sequelize with Node.js"
     },
     {
-        "name": "eskell"
+        "name": "JavaScript Testing"
     },
     {
-        "name": "regis"
+        "name": "Agile Methodologies"
     },
     {
-        "name": "milva"
+        "name": "Team Collaboration"
     },
     {
-        "name": "angouleme"
+        "name": "Agile Best Practices"
     },
     {
-        "name": "coen"
+        "name": "Node.js Performance"
     },
     {
-        "name": "keira"
+        "name": "ES6 Modules"
     },
     {
-        "name": "shani"
+        "name": "OOP Design Patterns"
     }
 ]
