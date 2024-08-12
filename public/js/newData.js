@@ -1,3 +1,4 @@
+let tagIdsArr = [];
 const newFormHandler = async function (event) {
   event.preventDefault();
 
@@ -13,7 +14,8 @@ const newFormHandler = async function (event) {
     body: JSON.stringify({
       title: postTitle,
       description: postDescription,
-      project_link: postLink
+      project_link: postLink,
+      tagIds: tagIdsArr
     }),
     headers: { "Content-Type": "application/json" },
   });
