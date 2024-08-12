@@ -1,15 +1,11 @@
 const router = require("express").Router();
 
-// Import all of the routes from /api/ here
-const userRoutes = require("./userRoutes");
-const postRoutes = require("./postRoutes");
-const tagRoutes = require("./tagRoutes");
-const postTagRoutes = require("./postTagRoutes");
+// Import API route files
+const someApiRoute = require("./someApiRoute");
+const anotherApiRoute = require("./anotherApiRoute");
 
-// Connect the routes to the router here
-router.use("/users", userRoutes);
-router.use("/posts", postRoutes);
-router.use("/tags", tagRoutes);
-router.use("/posttags", postTagRoutes);
+// Connect the API routes to the router
+router.use("/someApi", someApiRoute);
+router.use("/anotherApi", anotherApiRoute);
 
 module.exports = router;
