@@ -1,9 +1,12 @@
 <div class="row">
-  {{#each userExamples}}
-  <div class="col-md-4 mb-4">
+  {{#with userExamples}}
+  <div class="col-md-8 mb-4 mx-auto">
     <div class="card shadow-sm bg-dark text-light">
       <div class="card-body">
         <h5 class="card-title text-warning-emphasis">{{message}}</h5>
+
+        <p class="card-text text-body-secondary">{{title}}</p>
+        <p class="card-text text-body-secondary">{{description}}</p>
         <p class="card-text text-body-secondary">This message is specific to this user!</p>
         <!-- Example buttons -->
         <button type="button" class="btn btn-outline-danger">Delete</button>
@@ -11,7 +14,15 @@
       </div>
     </div>
   </div>
-  {{/each}}
+  {{/with}}
+</div>
+<div class="row mt-3">
+  <h2 class="col-9 text-center">Tags : </h2>
+  <ul class="list-goup">
+    {{#each userExamples.tags as |tag|}}
+    <li class="list-group-item">{{tag.name}}</li>
+    {{/each}}
+  </ul>
 </div>
 
 <script src="/js/page-one.js"></script>
