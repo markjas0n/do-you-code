@@ -8,6 +8,7 @@ const searchRoutes = require("./searchRoutes");
 const addPostRoutes = require('./addPost')
 
 
+
 // Connect the routes to the router here
 router.use("/", homeRoutes);
 router.use("/api", apiRoutes);
