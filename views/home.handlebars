@@ -1,32 +1,55 @@
- <!-- Search Bar -->
-  <div class="search-bar mb-4">
-    <input type="text" id="searchInput" class="form-control" placeholder="Search by Username">
-    <button type="button" id="searchButton" class="btn btn-primary">Search</button>
-    <div id="results" class="mt-2"></div>
-  </div>
-  <div>
-    {{#each posts as |post|}}
-    {{!-- Reminder- this is a partial! Handlebars will render the code located in items.handlebars in the /partials/
-    directory! --}}
-    {{>items}}
-    {{/each}}
-  </div>
+<!-- Search Bar for Username -->
+<div class="search-bar mb-4">
+  <input type="text" id="usernameSearchInput" class="form-control" placeholder="Search by username">
+  <button type="button" class="btn btn-primary mt-2" onclick="searchByUsername()">Search by Username</button>
+</div>
 
-  <div class="card border-primary mb-3 text-center">
-    <h2 class="card-title text-white">Create New Post</h2>
+<!-- Search Bar for Tag Name -->
+<div class="search-bar mb-4">
+  <input type="text" id="tagSearchInput" class="form-control" placeholder="Search by tag name" oninput="searchTags()">
+  <button type="button" class="btn btn-primary mt-2" onclick="searchTags()">Search by Tag</button>
+</div>
+
+<!-- Display posts -->
+<div>
+  {{#each posts as |post|}}
+  {{!-- Render each post using the items partial --}}
+  {{>items}}
+  {{/each}}
+</div>
+
+<div class="card border-primary mb-3 text-center">
+  <h2 class="card-title text-white">Create New Post</h2>
+</div>
+
+
+<form id="new-data-form" class="mb-4">
+  <div class="card border-light mb-3">
+    <label for="data-title" class="form-label text-white">Title</label>
+    <textarea name="data-title" class="form-control"></textarea>
+    <label for="data-description" class="form-label text-white">Description</label>
+    <textarea name="data-description" class="form-control"></textarea>
+    <label for="data-link" class="form-label text-white">Project Link</label>
+    <textarea name="data-link" class="form-control"></textarea>
   </div>
+  <button type="submit" class="btn btn-outline-info">Create</button>
+</form>
 
-  <form id="new-data-form" class="mb-4">
-    <div class="card border-light mb-3">
-      <label for="data-title" class="form-label text-white">Title</label>
-      <textarea name="data-title" class="form-control"></textarea>
-      <label for="data-description" class="form-label text-white">Description</label>
-      <textarea name="data-description" class="form-control"></textarea>
-      <label for="data-link" class="form-label text-white">Project Link</label>
-      <textarea name="data-link" class="form-control"></textarea>
-    </div>
-    <button type="submit" class="btn btn-outline-info">Create</button>
-  </form>
+<!-- JavaScript Functions for Search -->
+<script>
+  function searchByUsername() {
+    const username = document.getElementById('usernameSearchInput').value.trim();
+    if (username) {
+      window.location.href = `/search/username/${username}`;
+    }
+  }
 
+  async function searchTags() {
+    const searchQuery = document.getElementById('tagSearchInput').value;
+    if (searchQuery) {
+      window.location.href = `/search/tag/${encodeURIComponent(searchQuery)}`;
+    }
+  }
+</script>
 
 <script src="../public/js/homepage.js"></script>
