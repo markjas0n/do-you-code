@@ -5,7 +5,7 @@ const homeRoutes = require("./homeRoutes");
 const apiRoutes = require("./api");
 const pageOneRoutes = require("./pageOneRoutes");
 const searchRoutes = require("./searchRoutes");
-const addPostRoutes = require('./addPost')
+const addPostRoutes = require('./addPostRoutes')
 
 
 
