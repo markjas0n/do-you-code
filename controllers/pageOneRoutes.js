@@ -12,7 +12,7 @@ router.get("/", withGuard, async (req, res) => {
       // Reminder- this is how you filter data by user_id
       include: [{ model: Tag, through: PostTag }],
       where: {
-        user_id: req.session.user_id,
+        user_id: req.session.user_id, 
       },
     });
 

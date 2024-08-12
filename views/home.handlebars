@@ -1,7 +1,9 @@
-<div>
+ <!-- Search Bar -->
+  <div class="search-bar mb-4">
+    <input type="text" id="searchInput" class="form-control" placeholder="Search by username" oninput="search()">
+    <div id="results" class="mt-2"></div>
+  </div>
   <div>
-    {{!-- Reminder: examples come from the data being passed in the res.render on homeRoutes.js! --}}
-
     {{#each posts as |post|}}
     {{!-- Reminder- this is a partial! Handlebars will render the code located in items.handlebars in the /partials/
     directory! --}}
@@ -24,6 +26,6 @@
     </div>
     <button type="submit" class="btn btn-outline-info">Create</button>
   </form>
-</div>
+
 
 <script src="/js/newData.js"></script>
