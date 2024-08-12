@@ -5,7 +5,7 @@ const homeRoutes = require("./homeRoutes");
 const apiRoutes = require("./api");
 const pageOneRoutes = require("./pageOneRoutes");
 const searchRoutes = require("./searchRoutes");
-const addPostRoutes = require('./addPost')
+const addPostRoutes = require('./addPostRoutes')
 
 
 
@@ -14,7 +14,7 @@ router.use("/", homeRoutes);
 router.use("/api", apiRoutes);
 router.use("/pageOne", pageOneRoutes);
 router.use("/search", searchRoutes);
-router.use("/addPost", addPostRoutes); ss
+router.use("/addPost", addPostRoutes);
 
 
 module.exports = router;
