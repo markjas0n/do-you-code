@@ -8,9 +8,9 @@ const { withGuard } = require("../utils/authGuard");
 
 router.get("/", withGuard, async (req, res) => {
   try {
-    const databyUser = await Post.findAll({
+    const databyUser = await Post.findOne({
       // Reminder- this is how you filter data by user_id
-      include: [{ model: Tag, through: PostTag}],
+      include: [{ model: Tag, through: PostTag }],
       where: {
         user_id: req.session.user_id,
       },
