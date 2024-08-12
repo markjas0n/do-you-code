@@ -19,7 +19,7 @@ router.get("/username/:username", withGuard, async (req, res) => {
     }
 
     const posts = await Post.findAll({
-      where: { userId: user.id },
+      where: { userId: user.id }, // include tags through post tags
     });
 
     const userExamples = user.get({ plain: true });

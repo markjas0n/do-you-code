@@ -8,24 +8,29 @@
     "start": "nodemon server.js",
     "seed": "node seeds/seed.js"
   },
-  "keywords": ["Keyworkd1", "Keyword2", "Keyword3"],
+  "keywords": [
+    "Keyworkd1",
+    "Keyword2",
+    "Keyword3"
+  ],
   "author": "Your Name",
-  "contributors": [{
-    "name": "Contributor Name",
-    "email": "contributor.email@email.com",
-    "url": "https://github.com/contributorUsername"
-  },
-  {
-    "name": "Contributor2 Name",
-    "email": "contibutor2.email@email.com",
-    "url": "https://github.com/contributor2Username"
-  },
-  {
-    "name": "Contributor3 Name",
-    "email": "contibutor3.email@email.com",
-    "url": "https://github.com/contributor3Username"
-  }
-    ],
+  "contributors": [
+    {
+      "name": "Contributor Name",
+      "email": "contributor.email@email.com",
+      "url": "https://github.com/contributorUsername"
+    },
+    {
+      "name": "Contributor2 Name",
+      "email": "contibutor2.email@email.com",
+      "url": "https://github.com/contributor2Username"
+    },
+    {
+      "name": "Contributor3 Name",
+      "email": "contibutor3.email@email.com",
+      "url": "https://github.com/contributor3Username"
+    }
+  ],
   "license": "MIT",
   "dependencies": {
     "bcrypt": "^5.0.0",
@@ -34,6 +39,7 @@
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
     "express-session": "^1.17.1",
+    "multer": "^1.4.5-lts.1",
     "pg": "^8.11.3",
     "sequelize": "^6.3.5"
   },

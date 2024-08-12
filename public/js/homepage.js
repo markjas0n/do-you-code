@@ -1,34 +1,3 @@
-/**
- * Function: search()
- * Purpose: Handles general search functionality. This could be for searching
- * across various fields depending on the implementation. This function remains
- * from the initial code provided.
- */
-async function search() {
-    const input = document.getElementById('searchInput').value.toLowerCase(); // Get the search input value and convert it to lowercase
-    const resultsDiv = document.getElementById('results'); // Select the results div to display search results
-    resultsDiv.innerHTML = ''; // Clear any previous results
-
-    try {
-        // Send a GET request to the server to search for the input query
-        const response = await fetch(`/search?query=${input}`);
-        const results = await response.json(); // Parse the JSON response
-
-        // Check if there are any results
-        if (results.length > 0) {
-            // Display the search results as a list of links
-            resultsDiv.innerHTML = `<ul>${results.map(user =>
-                `<li><a href="/users/${user.username}">${user.username}</a></li>`
-            ).join('')}</ul>`;
-        } else {
-            // Display a message if no results were found
-            resultsDiv.innerHTML = 'No users found.';
-        }
-    } catch (error) {
-        // Handle any errors that occur during the fetch operation
-        resultsDiv.innerHTML = 'Error fetching results.';
-    }
-}
 
 /**
  * Function: searchByUsername()
@@ -91,3 +60,6 @@ async function searchTags() {
         resultsDiv.innerHTML = 'Error fetching results.';
     }
 }
+
+document.getElementById('searchButton').addEventListener('click', search);
+
