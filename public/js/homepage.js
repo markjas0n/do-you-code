@@ -18,3 +18,5 @@ async function search() {
         resultsDiv.innerHTML = 'Error fetching results.';
     }
 }
+
+document.getElementById('searchButton').addEventListener('click', search);
