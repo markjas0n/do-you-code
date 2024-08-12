@@ -1,36 +1,31 @@
-<div>
-  <div>
-  {{!-- Reminder: examples comes from the data being passed in the res.render on homeRoutes.js! --}}
-
-  {{#each posts as |post|}}
-  {{!-- Reminder- this is a partial! Handlebars will render the code located in items.handlebars in the /partials/
-  directory! --}}
-  {{>items}}
-  {{/each}}
-</div>
-
-<div>
-  <!-- Search Bar -->
+ <!-- Search Bar -->
   <div class="search-bar mb-4">
     <input type="text" id="searchInput" class="form-control" placeholder="Search by username" oninput="search()">
     <div id="results" class="mt-2"></div>
   </div>
-  
   <div>
-  <h2 class="card border-light mb-3">Create New Post</h2>
+    {{#each posts as |post|}}
+    {{!-- Reminder- this is a partial! Handlebars will render the code located in items.handlebars in the /partials/
+    directory! --}}
+    {{>items}}
+    {{/each}}
   </div>
+
+  <div class="card border-primary mb-3 text-center">
+    <h2 class="card-title text-white">Create New Post</h2>
+  </div>
+
   <form id="new-data-form" class="mb-4">
     <div class="card border-light mb-3">
-      <label for="data-title" class="form-label .text-success">Title</label>
+      <label for="data-title" class="form-label text-white">Title</label>
       <textarea name="data-title" class="form-control"></textarea>
-      <label for="data-description" class="form-label .text-success">Description</label>
+      <label for="data-description" class="form-label text-white">Description</label>
       <textarea name="data-description" class="form-control"></textarea>
-      <label for="data-link" class="form-label .text-success">Project Link</label>
+      <label for="data-link" class="form-label text-white">Project Link</label>
       <textarea name="data-link" class="form-control"></textarea>
     </div>
     <button type="submit" class="btn btn-outline-info">Create</button>
   </form>
-</div>
 
 
 <script src="/js/newData.js"></script>
