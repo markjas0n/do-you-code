@@ -1,5 +1,14 @@
 <div>
   <div>
+  {{!-- Reminder: examples comes from the data being passed in the res.render on homeRoutes.js! --}}
+
+  {{#each posts as |post|}}
+  {{!-- Reminder- this is a partial! Handlebars will render the code located in items.handlebars in the /partials/
+  directory! --}}
+  {{>items}}
+  {{/each}}
+</div>
+  <div>
     <h2 class=".text-success">Create New Post</h2>
   </div>
   <form id="new-data-form" class="mb-4">
