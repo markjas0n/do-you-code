@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Post } = require("../models");
+const { User, Post, Tag, PostTag } = require("../models");
 const { withGuard } = require("../utils/authGuard");
 
 router.get("/:username", withGuard, async (req, res) => {
@@ -12,7 +12,7 @@ router.get("/:username", withGuard, async (req, res) => {
     });
 
     if (!user) {
-      return res.status(404).render("page-one", {
+      return res.status(404).render("home", {
         error: "User not found",
         loggedIn: req.session.logged_in,
       });
@@ -20,13 +20,18 @@ router.get("/:username", withGuard, async (req, res) => {
 
 
     const posts = await Post.findAll({
-      where: { userId: user.id }, // include tags through post tags
+      where: { userId: user.id },
+      include: [{
+        model: Tag,
+        through: PostTag,
+        
+      }]
     });
 
     const userExamples = user.get({ plain: true });
     const postsExamples = posts.map(post => post.get({ plain: true }));
 
-    res.render("page-one", {
+    res.render("home", {
       userExamples,
       postsExamples,
       loggedIn: req.session.logged_in,
