@@ -14,7 +14,7 @@ router.use("/", homeRoutes);
 router.use("/api", apiRoutes);
 router.use("/pageOne", pageOneRoutes);
 router.use("/search", searchRoutes);
-router.use("/addPost", addPostRoutes); ss
+router.use("/addPost", addPostRoutes);
 
 
 module.exports = router;
