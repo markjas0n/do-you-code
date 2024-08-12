@@ -1,7 +1,12 @@
 const router = require("express").Router();
-const { Tag } = require('../models/');
+const multer = require("multer");
+const upload = multer({ dest: '../uploads/'})
 const { withGuard } = require("../utils/authGuard");
+const { Tag } = require('../models/');
 
+router.post('/', withGuard, upload.single('data-screenshot'), async (req, res) => {
+    res.json('post successfully uploaded');
+})
 
 router.get('/', withGuard, async (req, res) => {
 
@@ -14,4 +19,5 @@ router.get('/', withGuard, async (req, res) => {
         res.status(500).json(err);
     }
 });
+
 module.exports = router;
