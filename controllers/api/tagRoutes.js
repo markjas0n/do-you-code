@@ -56,3 +56,5 @@ router.delete('/:id', apiGuard, async (req, res) => {
   }
 });
 
+module.exports = router;
+

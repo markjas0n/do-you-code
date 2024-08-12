@@ -8,6 +8,14 @@
   {{>items}}
   {{/each}}
 </div>
+
+<div>
+  <!-- Search Bar -->
+  <div class="search-bar mb-4">
+    <input type="text" id="searchInput" class="form-control" placeholder="Search by username" oninput="search()">
+    <div id="results" class="mt-2"></div>
+  </div>
+  
   <div>
   <h2 class="card border-light mb-3">Create New Post</h2>
   </div>
@@ -23,5 +31,6 @@
     <button type="submit" class="btn btn-outline-info">Create</button>
   </form>
 </div>
+
 
 <script src="/js/newData.js"></script>
