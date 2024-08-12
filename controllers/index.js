@@ -4,7 +4,7 @@ const router = require("express").Router();
 const homeRoutes = require("./homeRoutes");
 const apiRoutes = require("./api");
 const pageOneRoutes = require("./pageOneRoutes");
-const searchRoutes = require("./searchRoute");
+const searchRoutes = require("./searchRoutes");
 
 
 // Connect the routes to the router here

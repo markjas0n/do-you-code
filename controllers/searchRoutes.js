@@ -1,12 +1,12 @@
 const router = require("express").Router();
-const { User, Post } = require("../models");
+const { User, Post, Tag } = require("../models");
 const { withGuard } = require("../utils/authGuard");
 
-router.get("/:username", withGuard, async (req, res) => {
+// Search by Username
+router.get("/username/:username", withGuard, async (req, res) => {
   const username = req.params.username;
 
   try {
-
     const user = await User.findOne({
       where: { username: username },
     });
@@ -17,7 +17,6 @@ router.get("/:username", withGuard, async (req, res) => {
         loggedIn: req.session.logged_in,
       });
     }
-
 
     const posts = await Post.findAll({
       where: { userId: user.id },
@@ -36,5 +35,35 @@ router.get("/:username", withGuard, async (req, res) => {
   }
 });
 
-module.exports = router;
+// Search by Tag Name
+router.get("/tag/:tagName", async (req, res) => {
+  try {
+    const tagName = req.params.tagName;
 
+    if (!tagName) {
+      return res.status(400).json({ message: "No tag provided" });
+    }
+
+    // Find the tag
+    const tag = await Tag.findOne({
+      where: { name: tagName },
+      include: [{ model: Post, include: [User] }],
+    });
+
+    if (!tag) {
+      return res.status(404).json({ message: "Tag not found" });
+    }
+
+    const posts = tag.posts.map((post) => post.get({ plain: true }));
+
+    res.render("home", {
+      posts,
+      loggedIn: req.session.logged_in,
+      username: req.session.username,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+module.exports = router;
