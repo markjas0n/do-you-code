@@ -1,44 +1,44 @@
 [
     {
-        "name": "Node.js Techniques"
+        "name": "Node_Techniques"
     },
     {
-        "name": "ES6 Features"
+        "name": "ES6_Features"
     },
     {
-        "name": "OOP Principles"
+        "name": "OOP_Principles"
     },
     {
-        "name": "REST APIs"
+        "name": "REST_APIs"
     },
     {
-        "name": "SQL Optimization"
+        "name": "SQL_Optimization"
     },
     {
-        "name": "MVC Paradigm"
+        "name": "MVC_Paradigm"
     },
     {
-        "name": "Sequelize with Node.js"
+        "name": "Sequelize_with_Nodejs"
     },
     {
-        "name": "JavaScript Testing"
+        "name": "JavaScript_Testing"
     },
     {
-        "name": "Agile Methodologies"
+        "name": "Agile_Methodologies"
     },
     {
-        "name": "Team Collaboration"
+        "name": "Team_Collaboration"
     },
     {
-        "name": "Agile Best Practices"
+        "name": "Agile_Best_Practices"
     },
     {
-        "name": "Node.js Performance"
+        "name": "Nodejs_Performance"
     },
     {
-        "name": "ES6 Modules"
+        "name": "ES6_Modules"
     },
     {
-        "name": "OOP Design Patterns"
+        "name": "OOP_Design_Patterns"
     }
 ]

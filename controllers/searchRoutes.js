@@ -36,7 +36,6 @@ router.get("/username/:username", withGuard, async (req, res) => {
 
 
     res.render("userPost", {
-      userExamples,
 
       postsExamples,
       loggedIn: req.session.logged_in,
