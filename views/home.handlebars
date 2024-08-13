@@ -1,17 +1,19 @@
 <!-- Search Bar for Username -->
 <div class="search-bar mb-4">
   <input type="text" id="usernameSearchInput" class="form-control" placeholder="Search by username">
-  <button type="button" id="userSearch" class="btn btn-primary mt-2">Search by Username</button>
+  <button type="button" id="userSearch" class="btn btn-outline-danger mt-2">Search by Username</button>
 </div>
 
 <!-- Search Bar for Tag Name -->
 <div class="search-bar mb-4">
   <input type="text" id="tagSearchInput" class="form-control" placeholder="Search by tag name">
-  <button type="button" id="tagSearch" class="btn btn-primary mt-2">Search by Tag</button>
+  <button type="button" id="tagSearch" class="btn btn-outline-warning mt-2">Search by Tag</button>
 </div>
 
-
-<div id="results" class="mb-4">Results</div>
+<!-- Results Div with White Text -->
+<div id="results" class=".text-success">
+  Results
+</div>
 
 <!-- Display posts -->
 <div>
@@ -25,7 +27,6 @@
   <h2 class="card-title text-white">Create New Post</h2>
 </div>
 
-
 <form id="new-data-form" class="mb-4">
   <div class="card border-light mb-3">
     <label for="data-title" class="form-label text-white">Title</label>
@@ -38,5 +39,5 @@
   <button type="submit" class="btn btn-outline-info">Create</button>
 </form>
 
-
 <script src="/js/homepage.js"></script>
+
