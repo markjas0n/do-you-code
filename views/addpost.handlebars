@@ -23,6 +23,14 @@
       <textarea name="data-link"></textarea>
       <label for="data-screenshot">Screenshot</label>
       <input type="file" name="data-screenshot">
+
+      <label for="">Tags</label>
+      <select class="form-select" name="tags" id="tags" multiple aria-label="multiple select example">
+        <option selected>Open this select menu</option>
+        {{#each tags as |tag|}}
+        <option value="{{tag.id}}">{{tag.name}}</option>
+        {{/each}}
+      </select>
     </div>
     <button type="submit" class="btn btn-primary">Create</button>
   </form>
