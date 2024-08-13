@@ -13,16 +13,17 @@
   <div>
     <h2 class="text-primary-emphasis">Create New Post</h2>
   </div>
+
   <form action="/addPost" method="post" id="new-data-form" class="mb-4" enctype="multipart/form-data">
     <div class="mb-3">
-      <label for="data-title" class="form-label text-light-emphasis">Title</label>
-      <textarea name="data-title"></textarea>
-      <label for="data-description" class="form-label text-light-emphasis">Description</label>
-      <textarea name="data-description"></textarea>
-      <label for="data-link" class="form-label text-light-emphasis">Project Link</label>
-      <textarea name="data-link"></textarea>
-      <label for="data-screenshot">Screenshot</label>
-      <input type="file" name="data-screenshot">
+      <label for="title" class="form-label text-light-emphasis">Title</label>
+      <textarea name="title"></textarea>
+      <label for="description" class="form-label text-light-emphasis">Description</label>
+      <textarea name="description"></textarea>
+      <label for="link" class="form-label text-light-emphasis">Project Link</label>
+      <textarea name="link"></textarea>
+      <label for="screen">Screenshot</label>
+      <input type="file" name="screen">
 
       <label for="">Tags</label>
       <select class="form-select" name="tags" id="tags" multiple aria-label="multiple select example">
@@ -35,6 +36,3 @@
     <button type="submit" class="btn btn-primary">Create</button>
   </form>
 </div>
-
-<script src="/js/newData.js"></script>
-<script src="/js/addPost.js"></script>
