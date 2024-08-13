@@ -6,12 +6,9 @@
  */
 async function searchByUsername() {
     const username = document.getElementById('usernameSearchInput').value.trim().toLowerCase(); // Get the username input value and convert it to lowercase
-    const resultsDiv = document.getElementById('results'); // Select the results div to display search results
-    resultsDiv.innerHTML = ''; // Clear any previous results
-
     try {
         // Send a GET request to the server to search for posts by username
-        const response = await fetch(`/search/username/${encodeURIComponent(username)}`);
+        await fetch(`/search/username/${username}`);
 
 
 
