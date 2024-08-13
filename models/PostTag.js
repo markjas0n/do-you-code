@@ -7,23 +7,25 @@ class PostTag extends Model {}
 
 PostTag.init(
     {
-        post_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'post',
-                key: 'id',
-                unique: false
-            }
-        },
+        // post_id: {
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //         model: 'post',
+        //         key: 'id',
+        //         unique: false
+        //     },
+        //     allowNull: true
+        // },
 
-        tag_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'tag',
-                key: 'id',
-                unique: false
-            }
-        }
+        // tag_id: {
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //         model: 'tag',
+        //         key: 'id',
+        //         unique: false
+        //     },
+        //     allowNull: true
+        // }
     },
     {
         sequelize,

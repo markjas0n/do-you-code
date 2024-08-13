@@ -6,7 +6,7 @@ const { withGuard } = require("../utils/authGuard");
 // Search by Username
 router.get("/username/:username", withGuard, async (req, res) => {
   const username = req.params.username;
-
+  console.log(username);
   try {
     const user = await User.findOne({
       where: { username: username },
@@ -30,9 +30,8 @@ router.get("/username/:username", withGuard, async (req, res) => {
 
     const userExamples = user.get({ plain: true });
     const postsExamples = posts.map(post => post.get({ plain: true }));
-
+    console.log(postsExamples);
     res.render("home", {
-      userExamples,
       postsExamples,
       loggedIn: req.session.logged_in,
     });

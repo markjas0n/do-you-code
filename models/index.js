@@ -19,15 +19,16 @@ Post.belongsToMany(Tag, {
   through: {
     model: PostTag,
     unique: false
-    
-  }
+  },
+  foreignKey: 'post_id'
 });
 // Tags belongToMany Products (through ProductTag)
 Tag.belongsToMany(Post, {
   through: {
     model: PostTag,
     unique: false
-  }
+  },
+  foreignKey: 'tag_id'
 });
 
 // export all models here
