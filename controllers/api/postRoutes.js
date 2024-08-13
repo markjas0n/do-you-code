@@ -2,10 +2,25 @@ const router = require("express").Router();
 
 // import any models you plan to use for this data's routes here
 const { Post, PostTag } = require("../../models");
+const path = require('path');
 const multer = require("multer");
-const upload = multer({ dest: '../uploads/' });
+// Set up storage options
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    // Set the destination folder for uploaded files
+    cb(null, 'uploads/');
+  },
+  filename: function (req, file, cb) {
+    // Get the original file extension
+    const ext = path.extname(file.originalname);
+    // Use the original file name and extension
+    cb(null, file.originalname);
+  }
+});
+const upload = multer({ storage: storage });
 // protects routes from non-logged in users
 const { apiGuard } = require("../../utils/authGuard");
+
 
 router.post("/", apiGuard, upload.single('screen'), (req, res) => {
 
@@ -14,7 +29,8 @@ router.post("/", apiGuard, upload.single('screen'), (req, res) => {
   const project_link = req.body.link;
   const screenshot = req.file.path;
   const tagIds = req.body.tags;
-
+  console.log('**********');
+  console.log(req.file);
   console.log(tagIds);
   Post.create({ title, description, project_link, screenshot })
     .then((post) => {
@@ -29,16 +45,14 @@ router.post("/", apiGuard, upload.single('screen'), (req, res) => {
         return PostTag.bulkCreate(postTagIdArr);
       }
       // if no post tags, just respond
-      res.status(200).json(post);
+      //res.status(200).json(post);
     })
-    .then((postTagIds) => res.status(200).json(postTagIds))
+    .then(() =>
+      res.render('home'))
     .catch((err) => {
       console.log(err);
       res.status(400).json(err);
     });
-  res.json('post successfully uploaded');
-
-
 });
 
 router.put("/:id", apiGuard, async (req, res) => {
