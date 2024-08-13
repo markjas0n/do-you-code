@@ -1,9 +1,10 @@
 // Import modules for database connection and models
 const sequelize = require("../config/connection"); // Database connection
-const { User } = require("../models"); // Importing the User model
+const { User, Tag } = require("../models"); // Importing the User model
 
 //JSON data that will be seeded into the User table
 const userData = require("./userData.json");
+const tagData = require("./tagData.json");
 
 // Seeds the database with initial data
 const seedDatabase = async () => {
@@ -16,8 +17,9 @@ const seedDatabase = async () => {
     individualHooks: true, // Ensures that beforeCreate and beforeUpdate hooks are run
     returning: true, // Returns all newly created user instances
   });
+  await Tag.bulkCreate(tagData);
   console.log("Users created"); // Log that users have been successfully created
-
+  console.log("Tags created");
   // Exit the process after seeding is complete
   process.exit(0);
 };
