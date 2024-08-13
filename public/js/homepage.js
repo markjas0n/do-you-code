@@ -61,5 +61,6 @@ async function searchTags() {
     }
 }
 
-document.getElementById('searchButton').addEventListener('click', search);
+document.getElementById('userSearch').addEventListener('click', searchByUsername);
+document.getElementById('tagSearch').addEventListener('click', searchTags);
 

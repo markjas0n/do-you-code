@@ -1,14 +1,17 @@
 <!-- Search Bar for Username -->
 <div class="search-bar mb-4">
   <input type="text" id="usernameSearchInput" class="form-control" placeholder="Search by username">
-  <button type="button" class="btn btn-primary mt-2" onclick="searchByUsername()">Search by Username</button>
+  <button type="button" id="userSearch" class="btn btn-primary mt-2" onclick="searchByUsername()">Search by Username</button>
 </div>
 
 <!-- Search Bar for Tag Name -->
 <div class="search-bar mb-4">
   <input type="text" id="tagSearchInput" class="form-control" placeholder="Search by tag name" oninput="searchTags()">
-  <button type="button" class="btn btn-primary mt-2" onclick="searchTags()">Search by Tag</button>
+  <button type="button" id="tagSearch" class="btn btn-primary mt-2" onclick="searchTags()">Search by Tag</button>
 </div>
+
+
+<div id="results" class="mb-4">Results</div>
 
 <!-- Display posts -->
 <div>
@@ -35,21 +38,5 @@
   <button type="submit" class="btn btn-outline-info">Create</button>
 </form>
 
-<!-- JavaScript Functions for Search -->
-<script>
-  function searchByUsername() {
-    const username = document.getElementById('usernameSearchInput').value.trim();
-    if (username) {
-      window.location.href = `/search/username/${username}`;
-    }
-  }
 
-  async function searchTags() {
-    const searchQuery = document.getElementById('tagSearchInput').value;
-    if (searchQuery) {
-      window.location.href = `/search/tag/${encodeURIComponent(searchQuery)}`;
-    }
-  }
-</script>
-
-<script src="../public/js/homepage.js"></script>
+<script src="public/js/homepage.js"></script>
