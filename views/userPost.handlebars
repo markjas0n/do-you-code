@@ -1,7 +1,7 @@
 <!-- Search Bar for Username -->
 <div class="search-bar mb-4">
   <input type="text" id="usernameSearchInput" class="form-control" placeholder="Search by username">
-  <button type="button" id="userSearch" class="btn btn-primary mt-2">Search by Username</button>
+  <button id="userSearch" class="btn btn-primary mt-2">Search by Username</button>
 </div>
 
 <!-- Search Bar for Tag Name -->
@@ -15,7 +15,7 @@
 
 <!-- Display posts -->
 <div>
-  {{#each posts as |post|}}
+  {{#each postsExamples as |post|}}
   {{!-- Render each post using the items partial --}}
   {{>items}}
   {{/each}}

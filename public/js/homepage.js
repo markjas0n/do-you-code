@@ -8,14 +8,13 @@ async function searchByUsername() {
     const username = document.getElementById('usernameSearchInput').value.trim().toLowerCase(); // Get the username input value and convert it to lowercase
     try {
         // Send a GET request to the server to search for posts by username
-        await fetch(`/search/username/${username}`);
-
-
-
+        console.log("this should be the string", username);
+        const url = `/search/username/${username}`;
+        document.location = url;
+        
     } catch (error) {
         console.log(error);
         // Handle any errors that occur during the fetch operation
-        resultsDiv.innerHTML = 'Error fetching results.';
     }
 }
 

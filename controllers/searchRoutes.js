@@ -4,14 +4,13 @@ const { User, Post, Tag, PostTag } = require("../models");
 const { withGuard } = require("../utils/authGuard");
 
 // Search by Username
-router.get("/username/:username", withGuard, async (req, res) => {
-  const username = req.params.username;
-  console.log(username);
-  try {
+router.get("/username/:user_name", withGuard, async (req, res) => {
+   const username = req.params.user_name;
+   try {
     const user = await User.findOne({
-      where: { username: username },
+       where: { username: username },
     });
-
+    const plainUser = user.get({plain: true});
     // if (!user) {
     //   return res.status(404).render("home", {
     //     error: "User not found",
@@ -23,20 +22,16 @@ router.get("/username/:username", withGuard, async (req, res) => {
     }
 
     const posts = await Post.findAll({
-      where: { userId: user.id },
+      where: { user_id: plainUser.id },
       include: [{
         model: Tag,
         through: PostTag,
-        
       }]
     });
-
-    const userExamples = user.get({ plain: true });
     const postsExamples = posts.map(post => post.get({ plain: true }));
-
+    console.log(postsExamples);
 
     res.render("userPost", {
-
       postsExamples,
       loggedIn: req.session.logged_in,
     });
