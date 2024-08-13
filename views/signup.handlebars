@@ -1,22 +1,27 @@
 <div class="row justify-content-center">
   <div class="col-md-6">
-    <div class="card border-secondary mb-3">
-      <div class="card-body">
-        <h2 class="card-title text-center .text-secondary">Sign Up</h2>
-        <form id="signup-form">
+    <div class="card border-secondary">
+      <div class="card-header text-center text-white bg-secondary">
+        <h2 class="card-title">Create Account</h2>
+        </div>
+        <div class="card-body">
+          <form id="signup-form">
           <div class="mb-3">
-            <label for="username-input-signup" class="form-label .text-secondary-emphasis">Username</label>
+            <label for="username-input-signup" class="form-label text-secondary">Username</label>
             <input type="text" class="form-control" id="username-input-signup" />
           </div>
           <div class="mb-3">
-            <label for="password-input-signup" class="form-label .text-secondary">Password</label>
+            <label for="password-input-signup" class="form-label text-secondary">Password</label>
             <input type="password" class="form-control" id="password-input-signup" />
           </div>
-          <button type="submit" class="btn btn-outline-primary w-100">Signup!</button>
+          <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-outline-primary w-45">Sign Up!</button>
+          </div>
           <div class="text-center mt-3">
             <a href="/login" class="btn btn-outline-info">Login instead</a>
           </div>
         </form>
+        </div>
       </div>
     </div>
   </div>
