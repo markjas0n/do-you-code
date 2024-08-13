@@ -12,19 +12,20 @@ async function searchByUsername() {
     try {
         // Send a GET request to the server to search for posts by username
         const response = await fetch(`/search/username/${encodeURIComponent(username)}`);
-        const results = await response.json(); // Parse the JSON response
+        // const results = await response.json(); // Parse the JSON response
 
-        // Check if there are any results
-        if (results.length > 0) {
-            // Display the search results as a list of links
-            resultsDiv.innerHTML = `<ul>${results.map(post =>
-                `<li><a href="/posts/${post.id}">${post.title}</a></li>`
-            ).join('')}</ul>`;
-        } else {
-            // Display a message if no results were found
-            resultsDiv.innerHTML = 'No posts found for this username.';
-        }
+        // // Check if there are any results
+        // if (results.length > 0) {
+        //     // Display the search results as a list of links
+        //     resultsDiv.innerHTML = `<ul>${results.map(post =>
+        //         `<li><a href="/posts/${post.id}">${post.title}</a></li>`
+        //     ).join('')}</ul>`;
+        // } else {
+        //     // Display a message if no results were found
+        //     resultsDiv.innerHTML = 'No posts found for this username.';
+        // }
     } catch (error) {
+        console.log(error);
         // Handle any errors that occur during the fetch operation
         resultsDiv.innerHTML = 'Error fetching results.';
     }
