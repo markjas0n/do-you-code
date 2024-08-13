@@ -19,3 +19,8 @@
 #nav > ul > li {
   margin: 0 10px;
 }
+
+.footer-icon {
+  width: 80px; /* Adjust the size as needed */
+  height: 80px;
+}

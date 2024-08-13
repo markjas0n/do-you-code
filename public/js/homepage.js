@@ -13,7 +13,10 @@ async function searchByUsername() {
         // Send a GET request to the server to search for posts by username
         const response = await fetch(`/search/username/${encodeURIComponent(username)}`);
 
+
+
     } catch (error) {
+        console.log(error);
         // Handle any errors that occur during the fetch operation
         resultsDiv.innerHTML = 'Error fetching results.';
     }
