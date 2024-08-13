@@ -35,6 +35,24 @@
       display: block;
       text-align: center;
     }
+
+    /* Style for the dropdown content with rounded corners */
+    .dropdown-menu {
+      width: 500px; /* Increased width */
+      padding: 20px;
+      border-radius: 15px; /* Rounded corners */
+      left: -100%; /* Position to the left */
+      transform: translateX(-100%);
+      max-height: none; /* Remove height limit */
+    }
+
+    .dropdown-item {
+      white-space: normal; /* Allow text wrapping */
+    }
+
+    .dropdown-menu.show {
+      display: block;
+    }
   </style>
 </head>
 
@@ -43,8 +61,8 @@
   {{! Navbar }}
   <header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
     <div class="container">
-      <a class="navbar-brand" href="/">code_space_
-        <span class="navbar-brand-subtitle">a space for coders</span>
+      <a class="navbar-brand" href="/">codespace_
+        <span class="navbar-brand-subtitle">// a space for coders</span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -67,6 +85,27 @@
             <a class="btn btn-outline-success m-1" href="/login">Login</a>
           </li>
           {{/if}}
+          <li class="nav-item">
+            <a class="btn btn-outline-info m-1" href="/signup">Sign Up!</a>
+          </li>
+          <li class="nav-item dropdown">
+            <button class="btn btn-outline-danger dropdown-toggle m-1" type="button" id="userStoryDropdown"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              User Story
+            </button>
+            <ul class="dropdown-menu dropdown-menu-left" aria-labelledby="userStoryDropdown">
+              <li class="dropdown-item">
+                <p>
+                  Connect with others in the coding community to learn new skills or share YOUR own
+                  expertise through online sessions, meetups and collaborations. This platform will allow users to post 
+                  their skills, schedule sessions, and find others to learn from or teach. The motivation behind this project is to 
+                  foster community learning and skill exchange, 
+                  making it easier for people to gain new knowledge and skills locally. <br>
+                  Sign up now for only $4000.00 a week!
+                </p>
+              </li>
+            </ul>
+          </li>
         </ul>
       </div>
     </div>
@@ -79,8 +118,7 @@
 
   {{! Footer }}
   <footer class="bg-dark text-light text-center py-3">
-      <img src="images/codesmith.png" alt="CodeSmith Icon" class="footer-icon">
-
+    <img src="images/codesmith.png" alt="CodeSmith Icon" class="footer-icon">
     <p class="mb-0">© 2024 Code Space. All Rights Reserved.</p>
   </footer>
 
