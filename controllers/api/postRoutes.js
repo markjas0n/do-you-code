@@ -2,18 +2,25 @@ const router = require("express").Router();
 
 // import any models you plan to use for this data's routes here
 const { Post, PostTag } = require("../../models");
-
+const multer = require("multer");
+const upload = multer({ dest: '../uploads/' });
 // protects routes from non-logged in users
 const { apiGuard } = require("../../utils/authGuard");
 
-router.post("/", apiGuard, (req, res) => {
+router.post("/", apiGuard, upload.single('screen'), (req, res) => {
 
+  const title = req.body.title;
+  const description = req.body.description;
+  const project_link = req.body.link;
+  const screenshot = req.file.path;
+  const tagIds = req.body.tags;
 
-  Post.create(req.body)
+  console.log(tagIds);
+  Post.create({ title, description, project_link, screenshot })
     .then((post) => {
       // if there's post tags, we need to create pairings to bulk create in the PostTag model
-      if (req.body.tagIds.length) {
-        const postTagIdArr = req.body.tagIds.map((tag_id) => {
+      if (tagIds) {
+        const postTagIdArr = tagIds.map((tag_id) => {
           return {
             post_id: post.id,
             tag_id,
@@ -29,6 +36,9 @@ router.post("/", apiGuard, (req, res) => {
       console.log(err);
       res.status(400).json(err);
     });
+  res.json('post successfully uploaded');
+
+
 });
 
 router.put("/:id", apiGuard, async (req, res) => {

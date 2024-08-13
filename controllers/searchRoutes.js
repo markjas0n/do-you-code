@@ -12,11 +12,14 @@ router.get("/username/:username", withGuard, async (req, res) => {
       where: { username: username },
     });
 
+    // if (!user) {
+    //   return res.status(404).render("home", {
+    //     error: "User not found",
+    //     loggedIn: req.session.logged_in,
+    //   });
+    // }
     if (!user) {
-      return res.status(404).render("home", {
-        error: "User not found",
-        loggedIn: req.session.logged_in,
-      });
+      return res.status(404).json({ message: "User not found" });
     }
 
     const posts = await Post.findAll({
@@ -30,8 +33,10 @@ router.get("/username/:username", withGuard, async (req, res) => {
 
     const userExamples = user.get({ plain: true });
     const postsExamples = posts.map(post => post.get({ plain: true }));
-    console.log(postsExamples);
-    res.render("home", {
+
+
+    res.render("userPost", {
+
       postsExamples,
       loggedIn: req.session.logged_in,
     });
@@ -61,7 +66,7 @@ router.get("/tag/:tagName", async (req, res) => {
 
     const posts = tag.posts.map((post) => post.get({ plain: true }));
 
-    res.render("home", {
+    res.render("tagPost", {
       posts,
       loggedIn: req.session.logged_in,
       username: req.session.username,
