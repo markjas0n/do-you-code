@@ -6,7 +6,7 @@ const apiRoutes = require("./api");
 const pageOneRoutes = require("./pageOneRoutes");
 const searchRoutes = require("./searchRoutes");
 const addPostRoutes = require('./addPostRoutes')
-
+const updatePostRoutes = require('./updatePostRoutes');
 
 
 // Connect the routes to the router here
@@ -15,6 +15,6 @@ router.use("/api", apiRoutes);
 router.use("/pageOne", pageOneRoutes);
 router.use("/search", searchRoutes);
 router.use("/addPost", addPostRoutes);
-
+router.use('/updatePost', updatePostRoutes);
 
 module.exports = router;
