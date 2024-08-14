@@ -82,7 +82,7 @@ router.put("/:id", apiGuard, async (req, res) => {
       if (req.body.tagIds && req.body.tagIds.length) {
 
         PostTag.findAll({
-          where: { post_id: req.body.id }
+          where: { post_id: req.params.id }
         }).then((postTags) => {
           // create filtered list of new tag_ids
           const postTagIds = postTags.map(({ tag_id }) => tag_id);
