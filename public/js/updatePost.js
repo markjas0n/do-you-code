@@ -12,8 +12,9 @@ const updateFormHandler = async function (event) {
     const tagsEl = document
         .querySelector("#tags-input")
         .value.trim();
-
-    const response = await fetch("/api/posts/", {
+    const id = window.location.pathname.split('/')[this.length - 1];
+    console.log(id);
+    const response = await fetch(`/api/posts/${id}`, {
         method: "PUT",
         body: JSON.stringify({
             id: idEl,
