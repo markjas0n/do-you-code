@@ -12,12 +12,12 @@ const updateFormHandler = async function (event) {
     const tagsEl = document
         .querySelector("#tags-input")
         .value.trim();
-    const id = window.location.pathname.split('/')[this.length - 1];
+    const idArray = window.location.pathname.split('/');
+    const id = idArray[idArray.length -1];
     console.log(id);
     const response = await fetch(`/api/posts/${id}`, {
         method: "PUT",
         body: JSON.stringify({
-            id: idEl,
             title: titleEL,
             description: descriptionEl,
             project_link: linkEl,
