@@ -56,7 +56,7 @@ router.post("/", apiGuard, upload.single('screen'), (req, res) => {
     });
 });
 
-router.put("/", apiGuard, async (req, res) => {
+router.put("/:id", apiGuard, async (req, res) => {
   // try {
   //   const [updatedRows] = await Post.update(req.body, {
   //     where: {
@@ -75,7 +75,7 @@ router.put("/", apiGuard, async (req, res) => {
   // update product data
   Post.update(req.body, {
     where: {
-      id: req.body.id,
+      id: req.params.id,
     },
   })
     .then((post) => {
