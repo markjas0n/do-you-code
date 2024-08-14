@@ -7,7 +7,7 @@ router.get("/:id", withGuard, async (req, res) => {
         const id = req.params.id;
         const postData = await Post.findOne({
             where: {id: id},
-            include: [User, {model: Tag, through: PostTag}],
+            include: [{model: Tag, through: PostTag}],
       });
   
       const post = postData.get({ plain: true });

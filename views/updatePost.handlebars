@@ -6,17 +6,17 @@
         <form method="put" id="update-form" class="mb-4">
             <div class="form-group">
                 <label for="title-input" class="form-label text-light-emphasis">Title</label>
-                <input type="text" id="title-input" class="form-control" name="title-input" placeholder="{{title}}" />
+                <input type="text" id="title-input" class="form-control" name="title-input" placeholder="{{post.title}}" />
             </div>
             <div class="form-group">
                 <label for="link-input" class="form-label text-light-emphasis">Project Link</label>
                 <input type="text" id="link-input" class="form-control" name="link-input"
-                    placeholder="{{project_link}}" />
+                    placeholder="{{post.project_link}}" />
             </div>
             <div class="form-group">
                 <label for="description-input" class="form-label text-light-emphasis">Description</label>
                 <textarea name="description-input" id="description-input" class="form-control" rows="3"
-                    placeholder="{{description}}"></textarea>
+                    placeholder="{{post.description}}"></textarea>
             </div>
             <div class="form-group">
                 <label for="">Tags</label>

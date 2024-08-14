@@ -7,7 +7,7 @@ const pageOneRoutes = require("./pageOneRoutes");
 const searchRoutes = require("./searchRoutes");
 const addPostRoutes = require('./addPostRoutes')
 
-const userPageRoutes = require("./userPageRoutes");
+const userPageRoutes = require("./userPageRoutes.js");
 
 
 const updatePostRoutes = require('./updatePostRoutes');
@@ -21,7 +21,7 @@ router.use("/pageOne", pageOneRoutes);
 router.use("/search", searchRoutes);
 router.use("/addPost", addPostRoutes);
 
-router.use("/userPage",userPageRoutes);
+router.use("/userPage", userPageRoutes);
 
 
 router.use('/updatePost', updatePostRoutes);
