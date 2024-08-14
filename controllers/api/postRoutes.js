@@ -8,7 +8,7 @@ const multer = require("multer");
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     // Set the destination folder for uploaded files
-    cb(null, 'uploads/');
+    cb(null, 'public/images');
   },
   filename: function (req, file, cb) {
     // Get the original file extension
@@ -23,19 +23,20 @@ const { apiGuard } = require("../../utils/authGuard");
 
 
 router.post("/", apiGuard, upload.single('screen'), (req, res) => {
-
+  const user_id = req.session.user_id;
   const title = req.body.title;
   const description = req.body.description;
   const project_link = req.body.link;
-  const screenshot = req.file.path;
+  const screenshot = req.file.filename;
   const tagIds = req.body.tags;
   console.log('**********');
   console.log(req.file);
   console.log(tagIds);
-  Post.create({ title, description, project_link, screenshot })
+
+  Post.create({ title, description, project_link, screenshot, user_id })
     .then((post) => {
       // if there's post tags, we need to create pairings to bulk create in the PostTag model
-      if (tagIds) {
+      if (tagIds.length) {
         const postTagIdArr = tagIds.map((tag_id) => {
           return {
             post_id: post.id,
