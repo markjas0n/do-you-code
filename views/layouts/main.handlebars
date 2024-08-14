@@ -44,6 +44,8 @@
       left: -100%;
       transform: translateX(-100%);
       max-height: none;
+      opacity: .5;
+      border: 1px solid #dc3545; /* Border color matches the "User Story" button */
     }
 
     .dropdown-item {
@@ -76,10 +78,10 @@
           </li>
           {{#if loggedIn}}
           <li class="nav-item">
-            <button type="button" class="btn btn-outline-danger" id="logout">Logout</button>
+            <button type="button" class="btn btn-outline-secondary m-1" id="logout">Logout</button>
           </li>
           <li class="nav-item">
-            <a href="/addPost" class="btn btn-outline-danger" id="post">Add Post</a>
+            <a href="/addPost" class="btn btn btn-outline-light m-1" id="post">Add Post</a>
           </li>
           {{else}}
           <li class="nav-item">

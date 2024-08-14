@@ -1,26 +1,26 @@
 <div class="container w-50 mx-auto">
   <div class="row">
-    <h2 class="text-primary-emphasis">Create New Post</h2>
+    <h2 class="text-primary">Create New Post</h2>
   </div>
   <div class="row">
     <form action="/api/posts" method="post" id="new-data-form" class="mb-4" enctype="multipart/form-data">
       <div class="form-group">
-        <label for="title" class="form-label text-light-emphasis">Title</label>
-        <input type="text" class="form-control" name="title" />
+        <label for="title" class="form-label text-light">Title</label>
+        <input type="text" class="form-control border-dark" name="title" />
       </div>
       <div class="form-group">
-        <label for="link" class="form-label text-light-emphasis">Project Link</label>
-        <input type="text" class="form-control" name="link" />
+        <label for="link" class="form-label text-light">Project Link</label>
+        <input type="text" class="form-control border-dark" name="link" />
       </div>
       <div class="form-group">
-        <label for="description" class="form-label text-light-emphasis">Description</label>
-        <textarea name="description" class="form-control" rows="3"></textarea>
+        <label for="description" class="form-label text-light">Description</label>
+        <textarea name="description" class="form-control border-dark" rows="3"></textarea>
       </div>
-      <label for="screen">Screenshot</label>
-      <input type="file" name="screen">
+      <label for="screen">Screenshot</label> <br>
+      <input type="file" name="screen" class="border-dark"> <!-- Note: file inputs don't have visible borders but including for consistency -->
       <div class="form-group">
-        <label for="">Tags</label>
-        <select class="form-select" name="tags" id="tags" multiple aria-label="multiple select example">
+        <label for="tags">Tags</label>
+        <select class="form-select border-dark" name="tags" id="tags" multiple aria-label="multiple select example">
           {{#each tags as |tag|}}
           <option value="{{tag.id}}">{{tag.name}}</option>
           {{/each}}

@@ -1,26 +1,45 @@
-/* any css stylesheets can go in this folder */
-/* hint- remember to import them in your handlebars! */
-#header {
-  background-color: lightblue;
-}
-#footer {
-  background-color: lightcoral;
-}
-#nav {
-  display: flex;
-}
-
-#nav > ul {
-  display: flex;
-  list-style-type: none;
-  align-items: center;
+/* Custom styles for the Codespace title */
+.navbar-brand {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.9rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ffff, #3a7bd5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease-in-out;
 }
 
-#nav > ul > li {
-  margin: 0 10px;
+.navbar-brand:hover {
+  transform: scale(1.1);
+  text-shadow: 2px 2px 10px rgba(0, 210, 255, 0.8);
 }
 
-.footer-icon {
-  width: 80px; /* Adjust the size as needed */
-  height: 80px;
+/* Fine print under the title */
+.navbar-brand-subtitle {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: lowercase;
+  display: block;
+  text-align: center;
+}
+
+/* Style for the dropdown content with rounded corners */
+.dropdown-menu {
+  width: 500px;
+  padding: 20px;
+  border-radius: 15px;
+  left: -100%;
+  transform: translateX(-100%);
+  max-height: none;
+  border: 1px solid #dc3545; /* This sets the border color to match the "User Story" button */
+}
+
+.dropdown-item {
+  white-space: normal;
+  color: white; /* Text inside the user story dropdown is now white */
+}
+
+.dropdown-menu.show {
+  display: block;
 }
