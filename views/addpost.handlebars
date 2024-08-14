@@ -1,38 +1,32 @@
-<div id="available-tags">
-  <h3>Available Tags</h3>
-  {{#each tags as |tag|}}
-  <button class="tag" data-id="{{tag.id}}">{{tag.name}}</button>
-  {{/each}}
-</div>
-
-<div id="user_tag">
-  <h3>Selected Tags</h3>
-</div>
-
-<div>
-  <div>
+<div class="container w-50 mx-auto">
+  <div class="row">
     <h2 class="text-primary-emphasis">Create New Post</h2>
   </div>
-
-  <form action="/api/posts" method="post" id="new-data-form" class="mb-4" enctype="multipart/form-data">
-    <div class="mb-3">
-      <label for="title" class="form-label text-light-emphasis">Title</label>
-      <textarea name="title"></textarea>
-      <label for="description" class="form-label text-light-emphasis">Description</label>
-      <textarea name="description"></textarea>
-      <label for="link" class="form-label text-light-emphasis">Project Link</label>
-      <textarea name="link"></textarea>
+  <div class="row">
+    <form action="/api/posts" method="post" id="new-data-form" class="mb-4" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="title" class="form-label text-light-emphasis">Title</label>
+        <input type="text" class="form-control" name="title" />
+      </div>
+      <div class="form-group">
+        <label for="link" class="form-label text-light-emphasis">Project Link</label>
+        <input type="text" class="form-control" name="link" />
+      </div>
+      <div class="form-group">
+        <label for="description" class="form-label text-light-emphasis">Description</label>
+        <textarea name="description" class="form-control" rows="3"></textarea>
+      </div>
       <label for="screen">Screenshot</label>
       <input type="file" name="screen">
-
-      <label for="">Tags</label>
-      <select class="form-select" name="tags" id="tags" multiple aria-label="multiple select example">
-        <option selected>Open this select menu</option>
-        {{#each tags as |tag|}}
-        <option value="{{tag.id}}">{{tag.name}}</option>
-        {{/each}}
-      </select>
-    </div>
-    <button type="submit" class="btn btn-primary">Create</button>
-  </form>
+      <div class="form-group">
+        <label for="">Tags</label>
+        <select class="form-select" name="tags" id="tags" multiple aria-label="multiple select example">
+          {{#each tags as |tag|}}
+          <option value="{{tag.id}}">{{tag.name}}</option>
+          {{/each}}
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary mt-3">Create</button>
+    </form>
+  </div>
 </div>

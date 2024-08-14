@@ -7,11 +7,11 @@ const signupFormHandler = async function (event) {
   const passwordEl = document
     .querySelector("#password-input-signup")
     .value.trim();
-    
+
   const projectsLinkEl = document
     .querySelector("#projects-link-input-signup") // Temp
     .value.trim();
-    
+
 
   if (passwordEl.length >= 8 && usernameEl && projectsLinkEl) {
     const response = await fetch("/api/users", {
