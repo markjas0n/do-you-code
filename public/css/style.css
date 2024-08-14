@@ -39,7 +39,7 @@
   white-space: normal;
   color: white; /* Text inside the user story dropdown is now white */
 }
-
 .dropdown-menu.show {
   display: block;
 }
+

@@ -4,5 +4,8 @@
     <h5 class="card-title .text-success">{{title}}</h5>
     <p class=".text-warning">{{description}}</p>
     <h6 class="card-link"><a href="{{project_link}}" target="_blank" class="card-link">{{project_link}}</a></h6>
+    {{#each tags as |tag|}}
+    <p>{{tag.name}}</p>
+    {{/each}}
   </div>
 </div>

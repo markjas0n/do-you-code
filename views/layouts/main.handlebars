@@ -50,7 +50,8 @@
 
     .dropdown-item {
       white-space: normal;
-      color: white; /* Text inside the user story dropdown is now white */
+      color: white;
+      /* Text inside the user story dropdown is now white */
     }
 
     .dropdown-menu.show {
@@ -83,6 +84,9 @@
           <li class="nav-item">
             <a href="/addPost" class="btn btn btn-outline-light m-1" id="post">Add Post</a>
           </li>
+          <li class="nav-item">
+            <a href="/userPage" class="btn btn-outline-danger" id="post">User Page</a>
+          </li>
           {{else}}
           <li class="nav-item">
             <a class="btn btn-outline-success m-1" href="/login">Login</a>
@@ -100,9 +104,11 @@
               <li class="dropdown-item">
                 <p>
                   Connect with others in the coding community to learn new skills or share YOUR own
-                  expertise through online sessions, meetups and collaborations. This platform will allow users to showcase 
-                  their skills, schedule sessions, and find others to learn from or teach. The motivation behind this project is to 
-                  foster community learning and skill exchange, 
+                  expertise through online sessions, meetups and collaborations. This platform will allow users to
+                  showcase
+                  their skills, schedule sessions, and find others to learn from or teach. The motivation behind this
+                  project is to
+                  foster community learning and skill exchange,
                   making it easier for people to gain new knowledge and skills locally. <br>
                   <br>Sign up now for only $4000.00 a week!
                 </p>
@@ -125,7 +131,8 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
   {{#if loggedIn}}
   <script src="/js/logout.js"></script>
   {{/if}}
