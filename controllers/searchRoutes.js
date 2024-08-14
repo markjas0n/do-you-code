@@ -29,7 +29,7 @@ router.get("/username/:user_name", withGuard, async (req, res) => {
       }]
     });
     const postsExamples = posts.map(post => post.get({ plain: true }));
-    console.log(postsExamples);
+    console.log(postsExamples[0].tags);
 
     res.render("userPost", {
       postsExamples,

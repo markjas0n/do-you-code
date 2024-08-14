@@ -56,7 +56,7 @@ router.post("/", apiGuard, upload.single('screen'), (req, res) => {
     });
 });
 
-router.put("/:id", apiGuard, async (req, res) => {
+router.put("/", apiGuard, async (req, res) => {
   // try {
   //   const [updatedRows] = await Post.update(req.body, {
   //     where: {
@@ -75,14 +75,14 @@ router.put("/:id", apiGuard, async (req, res) => {
   // update product data
   Post.update(req.body, {
     where: {
-      id: req.params.id,
+      id: req.body.id,
     },
   })
     .then((post) => {
       if (req.body.tagIds && req.body.tagIds.length) {
 
         PostTag.findAll({
-          where: { post_id: req.params.id }
+          where: { post_id: req.body.id }
         }).then((postTags) => {
           // create filtered list of new tag_ids
           const postTagIds = postTags.map(({ tag_id }) => tag_id);
